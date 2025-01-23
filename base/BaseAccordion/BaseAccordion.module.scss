@@ -1,0 +1,21 @@
+.Accordion {
+  width: 100%;
+
+  .Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+  }
+
+  .Body {
+    overflow: hidden;
+    transition: max-height 0.6s ease-in-out;
+  }
+
+  .PlusSvg {
+    width: rem(40px);
+    height: rem(40px);
+  }
+}

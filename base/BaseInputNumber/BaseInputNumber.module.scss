@@ -1,0 +1,41 @@
+.InputNumber {
+  height: rem(52px);
+  width: rem(52px);
+
+  @include iftablet {
+    height: rem(62px);
+    width: rem(62px);
+  }
+
+  @include iflaptop {
+    height: rem(66px);
+    width: rem(66px);
+  }
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: $color-default-background;
+
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-size: rem(24px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  @include iftablet {
+    font-size: rem(31px);
+  }
+
+  &__Error {
+    border: rem(1px) solid rgba(252, 57, 57, 0.8);
+    background: rgba(252, 57, 57, 0.1);
+  }
+}

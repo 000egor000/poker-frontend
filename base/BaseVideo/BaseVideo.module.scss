@@ -1,0 +1,357 @@
+.BaseVideo {
+  object-fit: cover;
+  overflow: clip;
+  position: relative;
+
+  & button {
+    cursor: pointer;
+  }
+}
+
+.VideoFrame {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+.ControlsPlayCenter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &__Box {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 100%;
+    box-shadow: inset -0.730227px 0.730227px 0.730227px -1.46045px
+      rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    padding: rem(8px);
+    width: rem(40px);
+    height: rem(40px);
+
+    @include iftablet {
+      padding: rem(11px);
+      width: rem(60px);
+      height: rem(60px);
+    }
+    @include iflaptop {
+      padding: rem(11px);
+      width: rem(60px);
+      height: rem(60px);
+    }
+    @include ifdesktop {
+      padding: rem(20px);
+      width: rem(96px);
+      height: rem(96px);
+    }
+  }
+
+  &__Icon {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.ControlsPlate {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+
+  padding: rem(8px) rem(16px) rem(8px);
+
+  //background: linear-gradient(
+  //  180deg,
+  //  rgba(13, 15, 20, 0) 0%,
+  //  rgba(13, 15, 20, 0.5) 50%,
+  //  rgba(13, 15, 20, 0.7) 80.37%
+  //);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  -moz-border-radius-bottomleft: 18px;
+  -moz-border-radius-bottomright: 18px;
+
+  backdrop-filter: blur(1px);
+
+  display: grid;
+  gap: rem(12px);
+  font-size: rem(18px);
+
+  //transform: translateY(0); // enable for dev
+  bottom: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease-in-out;
+
+  @include iftablet {
+    padding: rem(16px) rem(32px) rem(16px);
+  }
+}
+
+.ControlsBot {
+  display: flex;
+  justify-content: space-between;
+
+  &__Left {
+    display: flex;
+    align-items: center;
+    gap: rem(8px);
+  }
+
+  &__Right {
+    display: flex;
+    align-items: center;
+    gap: rem(8px);
+  }
+}
+
+.ControlsButton {
+  width: rem(24px);
+  height: rem(24px);
+  padding: rem(4px);
+
+  @include iftablet {
+    width: rem(36px);
+    height: rem(36px);
+  }
+  @include iflaptop {
+    width: rem(48px);
+    height: rem(48px);
+  }
+  @include ifdesktop {
+    padding: rem(12px);
+    width: rem(48px);
+    height: rem(48px);
+  }
+}
+
+.ControlsCountdown {
+  font-size: rem(10px);
+  user-select: none;
+  @include iftablet {
+    font-size: rem(14px);
+  }
+  @include iflaptop {
+    font-size: rem(16px);
+  }
+  @include ifdesktop {
+    font-size: rem(16px);
+  }
+}
+
+.ProgressBar {
+  width: 100%;
+  padding-top: 12px;
+  cursor: pointer;
+
+  &:hover {
+    padding-top: 22px;
+
+    .Empty {
+      height: 8px;
+    }
+  }
+
+  .Empty {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    height: 2px;
+    width: 100%;
+    transition: all 0.15s ease-in-out;
+  }
+
+  .BufferedFill {
+    position: absolute;
+    border-radius: 8px;
+    top: 0;
+    height: 100%;
+    background-color: rgba(217, 217, 217, 0.42);
+  }
+
+  .Fill {
+    position: absolute;
+    border-radius: 8px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #ffffff;
+  }
+}
+
+.Fullscreen {
+  width: 100vw;
+  height: 100vh;
+
+  & video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.ControlsPlateShow {
+  transition: all 0.05s ease-in-out;
+  transform: translateY(0);
+  //bottom: 0;
+  opacity: 1;
+}
+
+.VolumeFrame {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  position: relative;
+
+  &__Button {
+  }
+}
+
+.VolumeBarWrapper {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+
+  transition: opacity 0.15s ease-in-out;
+
+  &__Hide {
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &__Space {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
+
+.VolumeBar {
+  width: 100%;
+  height: 100px;
+  margin: 20px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  cursor: pointer;
+
+  &:-moz-drag-over {
+    cursor: grabbing;
+  }
+
+  .Empty {
+    position: absolute;
+    height: 60px;
+    border-radius: 8px;
+    width: 4px;
+    background-color: #ffffff4c;
+  }
+
+  .Fill {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+
+    &::before {
+      content: "";
+      top: 0;
+      left: 50%;
+      background-color: #ffffff;
+
+      height: 13px;
+      width: 13px;
+      border-radius: 100%;
+
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+      position: absolute;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+}
+
+.Overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  display: grid;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  &__Text {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    padding: rem(8px) rem(12px);
+    min-width: rem(80px);
+    text-align: center;
+
+    font-size: rem(10px);
+    @include iftablet {
+      font-size: rem(14px);
+    }
+    @include iflaptop {
+      font-size: rem(16px);
+    }
+  }
+
+  &__Icon {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 100%;
+    box-shadow: inset -0.730227px 0.730227px 0.730227px -1.46045px
+      rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+
+    padding: rem(8px);
+    width: rem(40px);
+    height: rem(40px);
+
+    @include iftablet {
+      padding: rem(11px);
+      width: rem(60px);
+      height: rem(60px);
+    }
+    @include iflaptop {
+      padding: rem(11px);
+      width: rem(60px);
+      height: rem(60px);
+    }
+    @include ifdesktop {
+      padding: rem(20px);
+      width: rem(96px);
+      height: rem(96px);
+    }
+  }
+
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+  transition: opacity 0.15s ease-out;
+
+  &__Show {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,113 @@
+.Select {
+  width: 100%;
+  position: relative;
+  @include ifdesktop {
+    width: 290px;
+  }
+}
+
+.SelectHeader {
+  background-color: $color-default-background;
+  border: 1px solid #FFFFFF1A;
+  border-radius: 12px;
+  padding: rem(15px) rem(16px);
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: rem(16px);
+  font-weight: 400;
+  line-height: rem(19px);
+  text-align: left;
+  cursor: pointer;
+
+
+  .Icon {
+    width: rem(24px);
+    height: rem(24px);
+    rotate: 180deg;
+    transition: rotate 0.25s ease-in-out;
+
+    &__open {
+      rotate: 0deg;
+    }
+  }
+}
+
+.SelectBody {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+
+  transform: translateY(rem(6px));
+  background-color: $color-default-background;
+  border-radius: 12px;
+  padding: rem(8px) 0;
+
+  max-height: rem(300px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    //@include iflaptop {
+    //  display: none;
+    //}
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #D4D3D399;
+    border-radius: 20px;
+  }
+
+  @supports (-moz-appearance: none) {
+    /* стили только для Firefox */
+    scrollbar-color: #D4D3D399 transparent;
+    scrollbar-width: thin;
+  }
+
+  .List {
+    display: grid;
+    //padding: rem(6px) 0;
+    list-style-type: none;
+  }
+
+  .Item {
+    padding: rem(8px) rem(16px) rem(6px);
+    display: grid;
+    gap: rem(6px);
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    &:hover {
+      background-color: #211F2F;
+    }
+
+    &__Title {
+      font-size: rem(16px);
+      font-weight: 400;
+      line-height: rem(16px);
+      text-align: left;
+      color: #FFFFFFE5;
+    }
+
+    &__Description {
+      font-size: rem(12px);
+      font-weight: 400;
+      line-height: rem(12px);
+      text-align: left;
+      color: #FFFFFFE5;
+      opacity: 0.6;
+    }
+  }
+
+  .Empty {
+    padding: rem(8px) rem(16px) rem(6px);
+  }
+}

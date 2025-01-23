@@ -1,0 +1,60 @@
+.Wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  &__blur {
+    backdrop-filter: blur(3px);
+    background-color: #14141480;
+  }
+}
+
+.Close {
+  position: absolute;
+  top: rem(20px);
+  right: rem(16px);
+
+  padding: rem(10px);
+  border-radius: 100%;
+  background-color: #211f2f;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  width: rem(40px);
+  height: rem(40px);
+
+  @include iftablet {
+    padding: rem(16px);
+
+    width: rem(60px);
+    height: rem(60px);
+
+    top: rem(30px);
+    right: rem(30px);
+  }
+
+  @include ifdesktop {
+    top: rem(40px);
+    right: rem(40px);
+  }
+
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.Visible {
+  display: flex;
+}

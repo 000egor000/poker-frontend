@@ -1,0 +1,301 @@
+.Button {
+  background: unset;
+  border: none;
+  color: $color-white;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  transition: $transition-common;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__SignUp {
+    width: 112px;
+    height: 40px;
+    border-radius: 100px;
+    padding: 6px 6px 6px 16px;
+    background: $color-blue;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+
+    font-family: $font-Arial;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 100%;
+    color: $color-white;
+    transition: $transition-common;
+
+    &:hover {
+      background: $color-blue-hover;
+    }
+
+    &:active {
+      background: $color-blue;
+    }
+
+    &:active > &_Icon {
+      path {
+        fill: $color-white;
+      }
+
+      rect {
+        fill: $color-blue-active;
+      }
+    }
+
+    @include Aiftablet {
+      width: 134px;
+      height: 48px;
+      padding: 8px 8px 8px 18px;
+      gap: 18px;
+      font-size: 14px;
+    }
+    @include Aifdesktop {
+      width: 153px;
+      height: 54px;
+      padding: 9px 9px 9px 18px;
+      gap: 24px;
+      font-size: 16px;
+    }
+    @include AifdesktopXL {
+      width: 175px;
+      height: 58px;
+      padding: 18px 9px 18px 22px;
+      gap: 29px;
+      font-size: 18px;
+      justify-content: space-between;
+    }
+
+    &_Icon {
+      width: 28px;
+      height: 28px;
+      path {
+        transition: $transition-common;
+      }
+
+      rect {
+        transition: $transition-common;
+      }
+
+      @include Aiftablet {
+        width: 32px;
+        height: 32px;
+      }
+      @include Aifdesktop {
+        width: 36px;
+        height: 36px;
+      }
+      @include AifdesktopXL {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  &__LogIn {
+    width: 93px;
+    height: 40px;
+    border-radius: 100px;
+    border: 2px solid $color-blue-dark;
+    padding: 14px 22px;
+    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: $font-Arial;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 100%;
+    color: $color-blue-dark;
+    transition: $transition-common;
+
+    &:hover {
+      background: $color-blue-12;
+      border-color: $color-blue-hover;
+      color: $color-blue-hover;
+    }
+
+    &:active {
+      background: transparent;
+      border-color: $color-blue;
+      color: $color-blue;
+    }
+
+    @include Aiftablet {
+      width: 93px;
+      height: 48px;
+      padding: 14px 22px;
+      border: 2px solid $color-blue-dark;
+      font-size: 14px;
+    }
+    @include Aifdesktop {
+      width: 108px;
+      height: 54px;
+      padding: 19px 26px;
+      border: 3px solid $color-blue-dark;
+      font-size: 16px;
+    }
+    @include AifdesktopXL {
+      width: 123px;
+      height: 58px;
+      padding: 20px 30px;
+      border: 3px solid $color-blue-dark;
+      font-size: 18px;
+    }
+  }
+
+  &__TryItNow {
+    width: 158px;
+    height: 48px;
+    border-radius: 100px;
+    padding: 8px 8px 8px 18px;
+    background: $color-blue;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 18px;
+
+    font-family: $font-Arial;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    color: $color-white;
+    transition: $transition-common;
+
+    &:hover {
+      background: $color-blue-hover;
+    }
+
+    &:active {
+      background: $color-blue;
+    }
+
+    &:active > &_Icon {
+      path {
+        fill: $color-white;
+      }
+
+      rect {
+        fill: $color-blue-active;
+      }
+    }
+
+    @include Aiftablet {
+      width: 181px;
+      height: 54px;
+      padding: 9px 9px 9px 18px;
+      gap: 24px;
+      font-size: 16px;
+    }
+    @include Aifdesktop {
+      width: 181px;
+      height: 54px;
+      padding: 9px 9px 9px 18px;
+      gap: 24px;
+      font-size: 16px;
+    }
+    @include AifdesktopXL {
+      width: 226px;
+      height: 74px;
+      padding: 33px 15px 33px 24px;
+      gap: 37px;
+      font-size: 18px;
+      line-height: 24px;
+      justify-content: space-between;
+    }
+
+    &_Icon {
+      width: 32px;
+      height: 32px;
+      path {
+        transition: $transition-common;
+      }
+
+      rect {
+        transition: $transition-common;
+      }
+
+      @include Aiftablet {
+        width: 36px;
+        height: 36px;
+      }
+      @include Aifdesktop {
+        width: 36px;
+        height: 36px;
+      }
+      @include AifdesktopXL {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  }
+}
+
+.Button__SignUp:disabled,
+.Button__SignUp[disabled],
+.Button__SignUp[disabled]:hover,
+.Button__SignUp[disabled]:focus {
+  pointer-events: all !important;
+  cursor: unset !important;
+  background: $color-blue-disabled;
+  color: $color-white-64;
+
+  &:hover {
+    background: $color-blue-disabled;
+    color: $color-white-64;
+  }
+
+  & .Button__SignUp_Icon {
+     path {
+      fill: rgba(5, 15, 39, 0.76);
+    }
+     rect {
+      fill: $color-white-64;
+    }
+  }
+}
+
+.Button__LogIn:disabled,
+.Button__LogIn[disabled],
+.Button__LogIn[disabled]:hover,
+.Button__LogIn[disabled]:focus {
+  pointer-events: all !important;
+  cursor: unset !important;
+  background: transparent;
+  color: #050F2766;
+  border-color: #9B9FA9;
+}
+
+
+.Button__TryItNow:disabled,
+.Button__TryItNow[disabled],
+.Button__TryItNow[disabled]:hover,
+.Button__TryItNow[disabled]:focus {
+  pointer-events: all !important;
+  cursor: unset !important;
+  background: $color-blue-disabled;
+  color: $color-white-64;
+
+  &:hover {
+    background: $color-blue-disabled;
+    color: $color-white-64;
+  }
+
+  & .Button__TryItNow_Icon {
+     path {
+      fill: rgba(5, 15, 39, 0.76);
+    }
+     rect {
+      fill: $color-white-64;
+    }
+  }
+}

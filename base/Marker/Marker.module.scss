@@ -1,0 +1,85 @@
+.Container {
+  padding: 4px 12px 4px 4px;
+  background-color: $color-white;
+  border-radius: 97.58px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+
+  @include Aiftablet {
+    padding: 4px 12px 4px 4px;
+    gap: 6px;
+  }
+  @include Aifdesktop {
+    padding: 4px 12px 4px 4px;
+    gap: 6px;
+  }
+  @include AifdesktopXL {
+    padding: 6px 22px 6px 6px;
+    gap: 10px;
+  }
+
+  &__Circle {
+    width: 21.47px;
+    height: 21.47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-grey-light;
+    border-radius: 50%;
+
+    @include Aiftablet {
+      width: 36px;
+      height: 36px;
+    }
+    @include Aifdesktop {
+      width: 36px;
+      height: 36px;
+    }
+    @include AifdesktopXL {
+      width: 62px;
+      height: 62px;
+    }
+
+    &_Image {
+      width: 10.73px;
+      height: 10.73px;
+
+      @include Aiftablet {
+        width: 20px;
+        height: 20px;
+      }
+      @include Aifdesktop {
+        width: 20px;
+        height: 20px;
+      }
+      @include AifdesktopXL {
+        width: 34px;
+        height: 34px;
+      }
+    }
+  }
+
+  &__Text {
+    font-family: $font-Arial;
+    font-weight: 400;
+    font-size: 9.76px;
+    line-height: 11.22px;
+    color: $color-blue-dark;
+
+    @include Aiftablet {
+      font-size: 12px;
+      line-height: 13.8px;
+    }
+    @include Aifdesktop {
+      font-size: 14px;
+      line-height: 16.1px;
+    }
+    @include AifdesktopXL {
+      font-size: 24px;
+      line-height: 27.6px;
+    }
+  }
+}

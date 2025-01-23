@@ -1,0 +1,47 @@
+.Default {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.Wrapper {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+
+  padding: 0 20px;
+  @include iftablet {
+    // padding: rem(0px) rem(20px);
+  }
+  @include iflaptop {
+    // padding: rem(0px) rem(40px);
+  }
+  @include ifdesktop {
+    // padding: rem(0px) rem(150px);
+  }
+}
+
+.FooterLTD {
+  font-size: rem(14px);
+  opacity: 0.6;
+  color: $color-primary;
+
+  position: absolute;
+  bottom: rem(48px);
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include iftablet {
+    font-size: rem(16px);
+  }
+
+  @include ifdesktop {
+    font-size: rem(18px);
+  }
+}

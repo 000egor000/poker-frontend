@@ -1,0 +1,140 @@
+.BaseInput {
+  font-size: inherit;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.Input {
+  display: flex;
+  outline: none;
+  height: rem(52px);
+  padding: rem(27px) rem(55px) rem(9px) rem(24px);
+  align-items: center;
+  border-radius: rem(12px);
+  border: rem(1px) solid rgba(255, 255, 255, 0.1);
+  background: $color-default-background;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: rem(16px);
+  line-height: 100%;
+  transition: border-color 0.3s ease;
+
+  //TODO: fix right padding if not password type
+  @include iflaptop {
+    font-size: rem(18px);
+    height: rem(62px);
+    padding: rem(34px) rem(55px) rem(10px) rem(24px);
+  }
+
+  &__Error {
+    border: rem(1px) solid rgba(252, 57, 57, 0.8);
+    background: rgba(252, 57, 57, 0.1);
+    &:hover {
+      border-color: rgb(255, 0, 0) !important;
+      transition: border-color 0.3s ease-in;
+    }
+  }
+
+  &__AutoFilled {
+    font-weight: 300;
+    font-size: rem(16px);
+    line-height: 120%;
+    color: $color-primary;
+    border: 1px solid $color-default-background;
+    background: $color-default-background;
+
+    @include iflaptop {
+      font-size: rem(18px);
+    }
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active,
+  &:-internal-autofill-selected {
+    transition:
+      background-color 5000s ease-in-out 0s,
+      color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: $color-primary;
+    -webkit-box-shadow: 0 0 0px 1000px $color-default-background inset !important;
+    background-color: $color-default-background;
+    color: $color-primary;
+  }
+
+  &:disabled {
+    background: $color-default-background;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    transition: border-color 0.3s ease-in;
+  }
+  &:focus {
+    & + .Label {
+      padding: rem(9px) rem(24px);
+      color: rgba(255, 255, 255, 0.4);
+      font-size: rem(12px);
+      line-height: 100%;
+      @include iflaptop {
+        padding: rem(10px) rem(24px);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: rem(14px);
+        line-height: 100%;
+      }
+    }
+  }
+}
+.Label {
+  position: absolute;
+  padding: rem(16px) rem(24px);
+  pointer-events: none;
+  font-size: rem(16px);
+  line-height: 120%;
+  transition:
+    padding 0.3s,
+    color 0.3s,
+    font-size 0.3s;
+  @include iflaptop {
+    padding: rem(20px) rem(24px);
+    font-size: rem(18px);
+  }
+  &__NoEmpty {
+    padding: rem(8px) rem(24px);
+    color: rgba(255, 255, 255, 0.4);
+    font-size: rem(12px);
+    line-height: 100%;
+    @include iflaptop {
+      padding: rem(10px) rem(24px);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: rem(14px);
+      line-height: 100%;
+    }
+  }
+}
+
+.IconEye {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: rem(24px);
+  justify-content: center;
+  align-items: center;
+  width: rem(24px);
+  height: rem(24px);
+  @include iflaptop {
+    //top: rem(20px);
+  }
+}
+
+.ErrorText {
+  margin-top: rem(8px);
+  color: #fc3939;
+  font-size: rem(12px);
+  line-height: 140%;
+  opacity: 0.9;
+  @include iftablet {
+    font-size: rem(14px);
+  }
+}

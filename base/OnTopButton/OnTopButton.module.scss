@@ -1,0 +1,47 @@
+.OnTopButton {
+  right: rem(10px);
+  bottom: rem(100px);
+  position: fixed;
+  cursor: pointer;
+  width: rem(40px);
+  height: rem(40px);
+  justify-content: center;
+  align-items: center;
+  border-radius: rem(425px);
+  background: #211e2c;
+  border: rem(3px) solid rgba(255, 255, 255, 0.05);
+  @include iftablet {
+    right: rem(18px);
+    bottom: rem(140px);
+    width: rem(60px);
+    height: rem(60px);
+  }
+  @include iflaptop {
+    bottom: rem(160px);
+    right: rem(40px);
+  }
+  @include ifdesktop {
+    bottom: rem(200px);
+
+    width: rem(100px);
+    height: rem(100px);
+  }
+  &:hover {
+    path {
+      stroke: rgba(102, 127, 244, 1);
+    }
+  }
+
+  &__UpArrowSvg {
+    width: rem(19px);
+    height: rem(19px);
+    @include iftablet {
+      width: rem(29px);
+      height: rem(29px);
+    }
+    @include ifdesktop {
+      width: rem(48px);
+      height: rem(48px);
+    }
+  }
+}

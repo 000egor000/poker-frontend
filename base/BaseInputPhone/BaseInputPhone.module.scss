@@ -1,0 +1,190 @@
+.PhoneInput {
+  display: flex;
+  outline: none;
+  height: rem(52px);
+  align-items: center;
+  border-radius: rem(12px);
+  border: rem(1px) solid rgba(255, 255, 255, 0.1);
+  background: $color-default-background;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: rem(16px);
+  line-height: 100%;
+  transition: border-color 0.3s ease;
+
+  //gap: rem(12px);
+
+  @include iflaptop {
+    font-size: rem(18px);
+    height: rem(62px);
+  }
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    transition: border-color 0.3s ease-in;
+  }
+}
+
+.Trigger {
+  display: flex;
+  align-items: center;
+  gap: rem(12px);
+  cursor: pointer;
+  height: 100%;
+  padding-left: rem(24px);
+}
+
+.CountryFlag {
+  border-radius: 2px;
+  width: rem(32px);
+  height: rem(23px);
+  overflow: clip;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Dialog {
+  position: absolute;
+  margin-top: rem(6px);
+  z-index: 1000;
+  width: 100%;
+  max-height: 255px;
+
+  border-radius: rem(12px);
+  border: 1px solid var(--base-100-light, rgba(26, 26, 26, 0.1));
+  background: $color-default-background;
+  box-shadow:
+    0px 4px 6px -1px rgba(0, 0, 0, 0.08),
+    0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+  //padding: 8px 16px;
+
+  transition: all 0.15s ease-in-out;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #d4d3d399;
+    border-radius: 20px;
+  }
+}
+
+.Search {
+  position: sticky;
+  top: 0;
+  padding: rem(8px) rem(16px) rem(8px);
+  background-color: $color-default-background;
+
+  display: flex;
+
+  .SearchIcon {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    top: 50%;
+    transform: translate(50%, -50%);
+  }
+
+  .SearchInput {
+    flex: 1;
+    outline: none;
+
+    padding: 13px 16px;
+    padding-left: 42px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #211e2c;
+
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500; //font-weight: 400;
+    line-height: 100%;
+  }
+}
+
+.CountryList {
+  padding: 0 rem(16px) rem(8px);
+  list-style: none;
+  display: grid;
+  gap: rem(8px);
+  margin-top: rem(10px);
+}
+
+.CountryItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: rem(6px) 0;
+
+  &__Flag {
+    width: rem(28px);
+    height: rem(20px);
+  }
+
+  &__Label {
+    font-size: rem(16px);
+    padding-left: rem(12px);
+
+    @include iflaptop {
+      font-size: rem(18px);
+    }
+  }
+}
+
+.NumberInput {
+  background: $color-default-background;
+  color: rgba(255, 255, 255, 0.9);
+  outline: none;
+  height: 100%;
+  flex: 1;
+  padding-left: rem(12px);
+  padding-right: rem(24px);
+
+  font-size: rem(16px);
+  background-color: unset;
+  @include iflaptop {
+    font-size: rem(18px);
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active,
+  &:-internal-autofill-selected {
+    transition:
+      background-color 5000s ease-in-out 0s,
+      color 5000s ease-in-out 0s;
+  }
+}
+
+.Error {
+  border: 1px solid rgba(252, 57, 57, 0.8);
+  background: rgba(252, 57, 57, 0.1);
+
+  &:hover {
+    border-color: rgb(255, 0, 0) !important;
+    transition: border-color 0.3s ease-in;
+  }
+}
+
+.Disabled,
+.Disabled:focus {
+  cursor: not-allowed;
+}
+
+.Disabled:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  transition: border-color 0.3s ease-in;
+}
+
+.DisabledTrigger {
+  cursor: not-allowed;
+  pointer-events: none;
+  user-select: none;
+}
